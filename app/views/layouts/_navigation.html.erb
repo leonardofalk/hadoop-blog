@@ -23,12 +23,8 @@
           IN+
         </div>
       </li>
-      <li class="<%= 'active' if current_page?('/') %>">
-        <%= link_to "/" do %>
-        <i class="fa fa-laptop"></i>
-        <span class="nav-label">Main page</span>
-        <% end %>
-      </li>
+      <%= nav_menu "Index", root_path, "laptop" %>
+      <%= nav_menu "Second Index", second_index_path, "dashboard" %>
     </ul>
   </div>
 </nav>
