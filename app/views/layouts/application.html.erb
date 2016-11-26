@@ -9,10 +9,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body class="mini-navbar">
+  <body class="mini-navbar fixed-sidebar">
     <div id="wrapper">
-      <%= render 'layouts/navigation' %>
-
       <div id="page-wrapper" class="gray-bg">
         <%= render 'layouts/topnavbar' %>
         <%= yield %>

@@ -1,0 +1,32 @@
+<div class="wrapper wrapper-content  animated fadeInRight article">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1">
+      <div class="ibox">
+        <div class="ibox-content">
+          <div class="text-center article-title">
+            <span class="text-muted">
+              <%= fa_icon "clock-o", text: @post.created_at %>
+            </span>
+            <h1>
+              <%= @post.title %>
+            </h1>
+          </div>
+          <p style="text-align: justify; text-justify: inter-word;">
+            <%= @post.content %>
+          </p>
+          <hr>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="small text-right">
+                <h5>Stats:</h5>
+                <i class="fa fa-eye"></i>
+                <%= @post.views %>
+                views
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,12 +1,21 @@
 <div class="row border-bottom">
   <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+    <ul class="nav navbar-top-links navbar-left m-l-xl">
+      <li>
+        <%= link_to root_path do %>
+        <%= fa_icon "home", class: "fa-lg" %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to posts_path do %>
+        <%= fa_icon "edit", class: "fa-lg" %>
+        <% end %>
+      </li>
+    </ul>
     <div class="navbar-header">
-      <a class="navbar-minimalize minimalize-styl-2 btn btn-primary">
-        <i class="fa fa-bars"></i>
-      </a>
       <form role="search" class="navbar-form-custom" method="post" action="/">
         <div class="form-group">
-          <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search"/>
+          <input type="text" placeholder="Pesquisar..." class="form-control" name="top-search" id="top-search"/>
         </div>
       </form>
     </div>

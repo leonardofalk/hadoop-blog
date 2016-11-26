@@ -17,6 +17,7 @@ gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'faker'
 end
 
 group :development do

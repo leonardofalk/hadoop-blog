@@ -1,0 +1,36 @@
+<div class="wrapper wrapper-content  animated fadeInRight blog">
+  <div class="row">
+    <% @posts.each do |post| %>
+    <div class="col-lg-4">
+      <div class="ibox">
+        <div class="ibox-content">
+          <%= link_to post, class: "btn-link" do %>
+          <h2><%= post.title %></h2>
+          <% end %>
+          <div class="small m-b-xs">
+            <strong><%= post.author.name %></strong>
+            <span class="text-muted">
+              <i class="fa fa-clock-o"></i>
+              <%= time_ago_in_words(post.created_at) %></span>
+          </div>
+          <p><%= truncate(post.content, length: 100) %></p>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="small text-right">
+                <h5>Stats:</h5>
+                <div>
+                  <i class="fa fa-comments-o"></i>
+                  0 comments
+                </div>
+                <i class="fa fa-eye"></i>
+                <%= post.views %>
+                views
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
