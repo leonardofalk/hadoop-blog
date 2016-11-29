@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
-
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-gem 'pg', '~> 0.19'
+
+platform :jruby do
+  gem 'pg', '0.19', platform: :jruby, git: 'https://github.com/headius/jruby-pg', branch: :master
+end
+
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -13,7 +15,9 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'font-awesome-rails'
+gem 'font-awesome-rails', '~> 4.7'
+gem 'rubydoop', '~> 1.2.1'
+gem 'jruby-jars', '= 9.1.6.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
