@@ -4,3 +4,13 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+require 'bundler/setup'
+require 'rubydoop/package'
+
+namespace :hadoop do
+  task :generate_package do
+    job_package = Rubydoop::Package.new
+    job_package.create!
+  end
+end
