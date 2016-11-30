@@ -16,4 +16,8 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-/index_instances/*.txt
+/index_instances/*
+!/index_instances/.keep
+
+/build/*
+!/build/.keep
