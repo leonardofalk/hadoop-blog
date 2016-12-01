@@ -1,16 +1,12 @@
 # Hadoop-Blog
 
-### Como executar (supondo que ja tenha as dependências instaladas)
+Blog que usa indexação de palavras para pesquisa usando Hadoop.
 
+##### How To
+Apenas executar a aplicação.
 
-##### Popular o banco de dados
+##### Dependências
 
-```bash
-rake db:seed
-```
-
-##### Executar Hadoop Individualmente
-
-```bash
-hadoop jar build/word_count.jar word-count -conf conf/hadoop-local.xml README.md output
-```
+- [Hadoop](http://hadoop.apache.org/)
+- [Apache Ant](http://ant.apache.org/)
+- [Rails](http://rubyonrails.org/)
