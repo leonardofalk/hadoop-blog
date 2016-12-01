@@ -1,8 +1,0 @@
-source 'https://rubygems.org/'
-
-gem 'rubydoop', path: '../..'
-
-group :development do
-  gem 'rake'
-  gem 'jruby-jars', "= 9.0.5.0"
-end

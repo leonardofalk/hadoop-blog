@@ -18,6 +18,3 @@
 
 /index_instances/*
 !/index_instances/.keep
-
-/build/*
-!/build/.keep
