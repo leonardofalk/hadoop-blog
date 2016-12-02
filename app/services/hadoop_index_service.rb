@@ -32,14 +32,14 @@ class HadoopIndexService
   def consume_indexes
     Dir.foreach(Rails.root.join('hadoop_result')) do |file|
       unless file.starts_with? '.'
-        _, id = file.scan(/(.+)_(\d+)\$/im).first
+        _, id = file.scan(/(.+)_(\d+)\$/i).first
         id = id.to_i
 
         content = File.open("hadoop_result/#{file}/part-r-00000").read
 
         content.scan(/^(.+)\s+(\d+)$/i).each do |entry|
           word, count = entry
-          word.delete('.').strip.downcase
+          word = word.delete('.').strip.downcase
           count = count.to_i
           word_count = WordRank.find_by(word: word, post_id: id)
 
