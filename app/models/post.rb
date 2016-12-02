@@ -9,4 +9,8 @@ class Post < ApplicationRecord
   def perform_word_count
     IndexerJob.perform_later(self)
   end
+
+  def ransackable_scopes(auth_object = nil)
+    [:word_cont, :content_cont]
+  end
 end

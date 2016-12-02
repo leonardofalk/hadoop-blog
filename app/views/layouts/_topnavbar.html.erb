@@ -6,18 +6,18 @@
         <%= fa_icon "home", class: "fa-lg" %>
         <% end %>
       </li>
-      <li>
-        <%= link_to posts_path do %>
-        <%= fa_icon "edit", class: "fa-lg" %>
-        <% end %>
-      </li>
     </ul>
     <div class="navbar-header">
-      <form role="search" class="navbar-form-custom" method="post" action="/">
+      <%= search_form_for @query_word, url: posts_path, class: "navbar-form-custom" do |f| %>
         <div class="form-group">
-          <input type="text" placeholder="Pesquisar..." class="form-control" name="top-search" id="top-search"/>
+          <%= f.search_field :word_cont, class: "form-control", placeholder: "Pesquisar [rankeado]..." %>
         </div>
-      </form>
+      <% end %>
+      <%= search_form_for @query_post, class: "navbar-form-custom" do |f| %>
+        <div class="form-group">
+          <%= f.search_field :content_or_title_cont, class: "form-control", placeholder: "Pesquisar [simples]..." %>
+        </div>
+      <% end %>
     </div>
     <ul class="nav navbar-top-links navbar-right">
       <li>

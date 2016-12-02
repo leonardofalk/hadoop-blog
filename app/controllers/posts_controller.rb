@@ -4,7 +4,22 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    query = (params[:q] || {})
+
+    @query_word = WordRank.ransack(query)
+    @query_post = Post.ransack(query)
+
+    if query[:word_cont]
+      p @query_word.result
+
+      @posts = Post.where(id: @query_word.result.pluck(:post_id))
+    elsif query[:content_or_title_cont]
+      p @query_post.result
+
+      @posts = @query_post.result(distinct: true)
+    else
+      @posts = Post.all
+    end
   end
 
   # GET /posts/1

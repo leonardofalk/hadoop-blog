@@ -1,0 +1,2 @@
+class WordRanksController < ApplicationController
+end

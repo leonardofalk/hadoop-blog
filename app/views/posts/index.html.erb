@@ -13,7 +13,7 @@
               <i class="fa fa-clock-o"></i>
               <%= time_ago_in_words(post.created_at) %></span>
           </div>
-          <p><%= truncate(post.content, length: 100) %></p>
+          <p><%= truncate(post.content, length: 500) %></p>
           <div class="row">
             <div class="col-md-12">
               <div class="small text-right">

@@ -32,9 +32,7 @@ class HadoopIndexService
   def consume_indexes
     Dir.foreach(Rails.root.join('hadoop_result')) do |file|
       unless file.starts_with? '.'
-        _, id = file.scan(/(.+)_(\d+)\$/i).first
-        id = id.to_i
-
+        _, id = file.scan(/(.+)\_(\d+)$/i).first
         content = File.open("hadoop_result/#{file}/part-r-00000").read
 
         content.scan(/^(.+)\s+(\d+)$/i).each do |entry|
