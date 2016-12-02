@@ -10,12 +10,8 @@ class PostsController < ApplicationController
     @query_post = Post.ransack(query)
 
     if query[:word_cont]
-      p @query_word.result
-
       @posts = Post.where(id: @query_word.result.pluck(:post_id))
     elsif query[:content_or_title_cont]
-      p @query_post.result
-
       @posts = @query_post.result(distinct: true)
     else
       @posts = Post.all
